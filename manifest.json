@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "GitHub Takip Kontrolü",
-  "version": "1.2",
-  "description": "GitHub profiline girdiğinizde kullanıcının sizi takip edip etmediğini kontrol etmenizi sağlayan eklentidir. Tamamen ücretsizdir.",
+  "name": "Knock Knock - GitHub Follow Check",
+  "version": "2.1.1",
+  "description": "Shows whether a GitHub user follows your account when you visit their profile.",
   "permissions": [
-    "storage",
-    "tabs",
-    "webNavigation"
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -28,9 +29,20 @@
         "https://github.com/*"
       ],
       "js": [
+        "localization.js",
         "main.js"
       ],
       "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "locales.json"
+      ],
+      "matches": [
+        "https://github.com/*"
+      ]
     }
   ]
 }

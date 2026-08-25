@@ -1,176 +1,132 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: #22272e;
+  width: 340px;
+  margin: 0;
+  background: #0d1117;
+  color: #f0f6fc;
 }
 
 .card {
-    width: 472px;
-    height: 398px;
-    background: #22272e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 22px;
 }
 
-#github-title {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 20px;
+.header {
+  margin-bottom: 20px;
 }
 
-#token-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.subtitle {
+  margin: 7px 0 0;
+  color: #8b949e;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
 }
 
 label {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 16px;
-    max-width: 90%;
-    text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c9d1d9;
 }
 
-#access-token {
-    width: 200%;
-    height: 20px;
-    border-radius: 5px;
-    background: #fff;
-    border: none;
-    padding: 10px;
-    margin-bottom: 10px;
+input,
+select {
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #161b22;
+  color: #f0f6fc;
+  font: inherit;
+  font-size: 13px;
 }
 
-#save-button {
-    width: 120px;
-    height: 40px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #504099;
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: normal;
-    border: none;
-    cursor: pointer;
+input::placeholder {
+  color: #6e7681;
 }
 
-#reportBugButton {
-    width: 85px;
-    height: 25px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #504099;
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: normal;
-    border: none;
-    cursor: pointer;
+input:focus,
+select:focus,
+button:focus-visible,
+.link:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
 }
 
-#save-button:hover {
-    background: #fff;
-    color: #504099;
+button {
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 6px;
+  background: #238636;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-#reportBugButton:hover {
-    background: #fff;
-    color: #504099;
+button:hover:not(:disabled) {
+  background: #2ea043;
 }
 
-#result {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: normal;
-    margin: 20px;
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
-#result a {
-    color: #ffffff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: underline;
+.status {
+  min-height: 18px;
+  margin: 14px 0 4px;
+  color: #8b949e;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
-
-#result a:hover {
-    color: #aaaaaa;
-    text-decoration: underline;
+.status[data-type="success"] {
+  color: #3fb950;
 }
 
-.text {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: normal;
+.status[data-type="error"] {
+  color: #f85149;
 }
 
-.text a {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
+.privacy-note {
+  margin: 0 0 14px;
+  color: #6e7681;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
-.text a:hover {
-    color: #aaaaaa;
-    text-decoration: underline;
+.link {
+  color: #58a6ff;
+  font-size: 12px;
+  text-decoration: none;
 }
 
-.developer {
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#access-token {
-    width: 93%;
-    height: 20px;
-    border-radius: 5px;
-    background: #fff;
-    border: none;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-#token-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.input-container {
-    width: inherit;
-}
-#togglePassword {
-    position: relative;
-    left: 90%;
-    top: -37px;
-    cursor: pointer;
+.link:hover {
+  text-decoration: underline;
 }
